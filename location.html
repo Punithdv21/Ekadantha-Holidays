@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Location Page</title>
+    <link rel="stylesheet" href="./styles/location.css">
+</head>
+<body>
+ 
+<header>
+    <!-- Header content goes here -->
+    <nav>
+        <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./index.html">Destinations</a></li>
+            <li><a href="./index.html">Services</a></li>
+           <!-- <li><a href="./index.html">Reviews</a></li>  -->
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section class="hero">
+        <!-- Hero image and content goes here -->
+        <img id="destination-image" src="" alt="Destination">
+        <div class="hero-content">
+            <h1 id="destination-name">Welcome to Destination!</h1>
+            <p id="destination-description">Discover the charm of this beautiful destination.</p>
+        </div>
+    </section>
+
+    <section class="tabs">
+        <!-- Tabs for detailed information -->
+        <div class="tab">
+            <button class="tablinks" onclick="openTab(event, 'info')">Information</button>
+            <button class="tablinks" onclick="openTab(event, 'thingsToDo')">Things To Do</button>
+            <button class="tablinks" onclick="openTab(event, 'howToReach')">How to Reach</button>
+            <button class="tablinks" onclick="openTab(event, 'gallery')">Gallery</button>
+            <button class="tablinks" onclick="openTab(event, 'stay')">Stay</button>
+        </div>
+
+        <div id="info" class="tabcontent">
+            <!-- Information content goes here -->
+            <p id="destination-info"></p>
+        </div>
+
+        <div id="thingsToDo" class="tabcontent">
+            <!-- Things to do content goes here -->
+            <h2>Things To Do</h2>
+            <p>Activities and attractions...</p>
+        </div>
+
+        <div id="howToReach" class="tabcontent">
+            <!-- How to reach content goes here -->
+            <h2>How to Reach</h2>
+            <p>Transportation options...</p>
+        </div>
+
+        <div id="gallery" class="tabcontent">
+            <!-- Gallery content goes here -->
+            <h2>Gallery</h2>
+            <p>Photos and videos...</p>
+        </div>
+
+        <div id="stay" class="tabcontent">
+            <!-- Stay content goes here -->
+            <h2>Stay</h2>
+            <p>Accommodation options...</p>
+        </div>
+    </section>
+</main>
+
+<!-- footer section  -->
+
+<section class="footer">
+    <div class="box-container">
+        <div class="box">
+            <h3>About Us</h3>
+            <p>We Believe in Safe & Happy Travel. Do make yourself feel like party of Ekadantha Holidays Family. Visit any
+                destination at very ease and safety with us.
+            </p>
+        </div>
+        <br>
+        <div class="box">
+            <h3>Quick links</h3>
+            <a href="./index.html">Home</a>
+            <a href="#gallery">Destinations</a>
+            <a href="#services">Services</a>
+            <a href="#review">Review</a>
+            <!-- <a href="#book">Book</a>
+            <a href="#packages">Packages</a>
+            <a href="#contact">Contact</a> -->
+        </div>
+        <br>
+        <div class="box">
+            <h3>Contact us</h3>
+            <p><i class="fas fa-phone-alt"></i> +91 8217642201</i></p>
+            <p><i class="fas fa-envelope"></i> support@Ekadanthaholidays.com </i></p>
+            <p><i class="fas fa-home"></i> Kalangi, dasankoppa(post), sirsi, Uttarakannada(dist), karanataka, India</i></p>
+        </div>
+        <br>
+        <div class="box">
+            <h3>Follow us</h3>
+            <a href="https://www.facebook.com/"><i class="fab fa-facebook-square"></i> Facebook</a>
+            <a href="https://www.instagram.com/ekadantaholidays?igsh=bTJsM3o1a2s1ZThx"><i class="fab fa-instagram"></i> Instagram</a>
+            <a href="https://twitter.com"><i class="fab fa-twitter"></i> Twitter</a>
+        </div>
+    </div>
+    <h1 class="credit"> Created by <span> Ekadantha Holidays</span> | &copy; All rights reserved! by Ekadantha Holidays </h1>
+</section>
+<script src="./script/location.js"></script>
+</body>
+</html>
