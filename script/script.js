@@ -1,10 +1,30 @@
 // Selecting elements from the DOM
 let formBtn = document.querySelector('#menu-bar');
 let loginForm = document.querySelector('.nav');
-let formClose = null; // No form-close element found in the provided HTML
 let menu = document.querySelector('#menu-bar');
 let navbar = document.querySelector('.nav');
 let imgBtns = document.querySelectorAll('.img-btn');
+let imgSlider = document.querySelector('#img-slider');
+let currentImgIndex = 0;
+
+// Function to change the image in the slider
+function changeImage() {
+    // Get the next image index
+    currentImgIndex = (currentImgIndex + 1) % imgBtns.length;
+    // Get the source of the next image
+    let src = imgBtns[currentImgIndex].getAttribute('data-src');
+    // Change the source of the image in the slider
+    imgSlider.src = src;
+    // Remove the 'active' class from all image buttons
+    imgBtns.forEach(btn => {
+        btn.classList.remove('active');
+    });
+    // Add the 'active' class to the current image button
+    imgBtns[currentImgIndex].classList.add('active');
+}
+
+// Automatically change the image every 3 seconds
+setInterval(changeImage, 3000);
 
 // Handling scroll event to close menu and login form
 window.addEventListener('scroll', () => {
@@ -20,33 +40,37 @@ menu.addEventListener('click', () => {
 });
 
 // Adding click event listener to image buttons to change slider image
-imgBtns.forEach(btn => {
+imgBtns.forEach((btn, index) => {
     btn.addEventListener('click', () => {
-        let activeBtn = document.querySelector('.img-btn.active');
-        activeBtn.classList.remove('active');
-        btn.classList.add('active');
+        currentImgIndex = index;
         let src = btn.getAttribute('data-src');
-        document.querySelector('.img-container img').src = src;
+        imgSlider.src = src;
+        imgBtns.forEach(btn => {
+            btn.classList.remove('active');
+        });
+        btn.classList.add('active');
     });
 });
 
 // Initializing swiper for review slider
-var swiper = new Swiper(".review-slider", {
-    spaceBetween: 20,
-    loop: true,
-    autoplay: {
-        delay: 2500,
-        disableOnInteraction: false,
-    },
-    breakpoints: {
-        640: {
-            slidesPerView: 1,
+document.addEventListener('DOMContentLoaded', function () {
+    var reviewSwiper = new Swiper(".review-slider", {
+        spaceBetween: 20,
+        loop: true,
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
         },
-        768: {
-            slidesPerView: 2,
+        breakpoints: {
+            640: {
+                slidesPerView: 1,
+            },
+            768: {
+                slidesPerView: 2,
+            },
+            1024: {
+                slidesPerView: 3,
+            },
         },
-        1024: {
-            slidesPerView: 3,
-        },
-    },
+    });
 });
