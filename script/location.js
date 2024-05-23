@@ -1,51 +1,51 @@
-// Function to open tabs
-function openTab(evt, tabName) {
-    // Declare all variables
-    var i, tabcontent, tablinks;
+document.addEventListener('DOMContentLoaded', function() {
+    fetch('./destination.json')
+        .then(response => response.json())
+        .then(data => {
+            const destination = data.destinations.find(dest => dest.name === "LANDSCAPES OF KARNATAKA");
 
-    // Get all elements with class="tabcontent" and hide them
+            document.getElementById('destination-image').src = destination.image;
+            document.getElementById('destination-name').innerText = destination.name;
+            document.getElementById('destination-description').innerText = destination.description;
+            document.getElementById('destination-info').innerText = `
+                ${destination.details.description}
+                Days: ${destination.details.days}
+                From: ${destination.details.from}
+                Includes: ${destination.details.includes}
+                Excludes: ${destination.details.excludes}
+                Booking procedure: ${destination.details.bookingProcedure}
+                Tour Cost: Rs. ${destination.details.tourCost}
+            `;
+
+            let itineraryHtml = '';
+            destination.itinerary.forEach(day => {
+                itineraryHtml += `
+                    <h3>${day.title}</h3>
+                    <p>${day.description}</p>
+                `;
+            });
+            document.getElementById('itinerary-content').innerHTML = itineraryHtml;
+
+            document.getElementById('includes').innerHTML = `<h3>Includes</h3><ul>${destination.includesDetails.map(item => `<li>${item}</li>`).join('')}</ul>`;
+            document.getElementById('excludes').innerHTML = `<h3>Excludes</h3><ul>${destination.excludesDetails.map(item => `<li>${item}</li>`).join('')}</ul>`;
+        });
+});
+
+function openTab(evt, tabName) {
+    var i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");
     for (i = 0; i < tabcontent.length; i++) {
         tabcontent[i].style.display = "none";
     }
-
-    // Get all elements with class="tablinks" and remove the class "active"
     tablinks = document.getElementsByClassName("tablinks");
     for (i = 0; i < tablinks.length; i++) {
         tablinks[i].className = tablinks[i].className.replace(" active", "");
     }
-
-    // Show the current tab, and add an "active" class to the button that opened the tab
     document.getElementById(tabName).style.display = "block";
     evt.currentTarget.className += " active";
 }
 
-// Function to fetch destination details from destination.json
-function fetchDestinationDetails(destinationName) {
-    fetch('./destination.json')
-        .then(response => response.json())
-        .then(data => {
-            // Find the destination details by name
-            const destination = data.destinations.find(dest => dest.name === destinationName);
-            if (destination) {
-                // Update destination image and content
-                document.getElementById('destination-image').src = destination.image;
-                document.getElementById('destination-name').textContent = destination.name;
-                document.getElementById('destination-description').textContent = destination.description;
-                document.getElementById('destination-info').textContent = destination.information;
-                // You can similarly update other tab contents
-            }
-        })
-        .catch(error => console.error('Error fetching destination details:', error));
-}
-
-// Call fetchDestinationDetails function when the page loads
-window.onload = function() {
-    // Get the destination name from the URL query parameter
-    const urlParams = new URLSearchParams(window.location.search);
-    const destinationName = urlParams.get('destination');
-    if (destinationName) {
-        // Fetch and display details of the selected destination
-        fetchDestinationDetails(destinationName);
-    }
-};
+// Display the default tab
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementsByClassName('tablinks')[0].click();
+});
