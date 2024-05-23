@@ -1,48 +1,60 @@
 {
-    "destinations": [
+  "destinations": [
       {
-        "id": 1,
-        "name": "Udupi",
-        "description": "Discover the charm of Udupi, a beautiful destination with rich cultural heritage and scenic beauty.",
-        "image": "./images/locations/Beach_1.jpg",
-        "information":"Udupi is a coastal district in Karnataka, carved out of Dakshina Kannada district in 1997. Udupi is popular for its food, temples, beaches and educational as well as financial institutions.The name “Udupi” is believed to have come from the Sanskrit words “Udu & Pa” that means “stars” and “Lord“. According to legend, the Moon’s light was once reduced due to a curse by King Daksha. The Moon prayed to Lord Shiva to get back the original shine and the prayer was believed to be made at the Chandramouleshwara Temple here. Pleased, Lord Shiva restored the Moon’s shine. It is also believed that the name Udupi was derived from the Tulu word “Odipu” which is associated with the Odabhanishwara Temple at Malpe.Vegetarian restaurants run by people who have their roots in this place are popular all over India and abroad as ‘Udupi Hotels’. Yakshagana folk art, Kambala buffalo race, Huli Vesha, Paryaya festival are some of the unique experiences not to be missed. Udupi Sri Krishna Temple and Kollur Mookambika Temple are two of the most popular temples in Karnataka. Dr Kota Shivarama Karantha, Jnanapeetha Award winning poet and writer was born in Kota near Udupi. This district has one of the highest literacy rates in the state and is 400 kms west of Bengaluru, bordering Dakshina Kannada, Shivamogga, Chikmagalur and Uttara Kannada districts. With Arabian Sea on one side and the Western Ghats on the other, This place offers both beach and forest experiences. For further information, visit the official district website click here!",
-        "thingsToDo": "List of things to do in Udupi...",
-        "howToReach": "Information about how to reach Udupi...",
-        "gallery": "Image gallery of Udupi...",
-        "stay": "Details about accommodation options in Udupi..."
-      },
-      {
-        "id": 2,
-        "name": "Coorg",
-        "description": "Explore the breathtaking landscapes and coffee plantations of Coorg.",
-        "image": "./images/locations/Tadaindmol.jpg",
-        "information": "Information about Coorg...",
-        "thingsToDo": "List of things to do in Coorg...",
-        "howToReach": "Information about how to reach Coorg...",
-        "gallery": "Image gallery of Coorg...",
-        "stay": "Details about accommodation options in Coorg..."
-      },
-      {
-        "id": 3,
-        "name": "Chikmagalur",
-        "description": "Chikkamagaluru is known as the 'Land of Coffee'.",
-        "image": "./images/locations/Chikmagalur.jpg",
-        "information": "Information about Chikmagalur...",
-        "thingsToDo": "List of things to do in Chikmagalur...",
-        "howToReach": "Information about how to reach Chikmagalur...",
-        "gallery": "Image gallery of Chikmagalur...",
-        "stay": "Details about accommodation options in Chikmagalur..."
-      },
-      {
-        "id": 4,
-        "name": "Mysore",
-        "description": "Mysore is also called as 'City of Palaces'.",
-        "image": "./images/locations/Mysore.jpg",
-        "information": "Information about Mysore...",
-        "thingsToDo": "List of things to do in Mysore...",
-        "howToReach": "Information about how to reach Mysore...",
-        "gallery": "Image gallery of Mysore...",
-        "stay": "Details about accommodation options in Mysore..."
+          "id": 1,
+          "name": "LANDSCAPES OF KARNATAKA",
+          "description": "Udupi - Coorg - Chikmagalur",
+          "image": "./images/locations/Tadaindmol.jpg",
+          "details": {
+              "description": "LANDSCAPES OF KARNATAKA is a blissful journey through the lush green valleys of Coorg and Chikmagalur whilst witnessing some other charms of these regions.",
+              "days": "6 Nights / 7 Days",
+              "from": "Udupi to Mangalore",
+              "includes": "Accommodation and all meals",
+              "excludes": "Rail / bus / air fare and food during rail / bus / air travel",
+              "bookingProcedure": "Advance payment Rs. 8,875 (incl GST) per person. Balance payment 20 days prior to the departure date.",
+              "tourCost": "35,500 (including 5% GST)"
+          },
+          "itinerary": [
+              {
+                  "title": "Day 1 - Udupi (1 night)",
+                  "description": "Pick up at Udupi railway / bus station - Head towards Hotel Chithara Comforts - Check in followed by lunch - Take blessings at the Sri Krishna Math - Head towards Malpe beach for a scenic sunset - Back to the hotel - Dinner - Rest up"
+              },
+              {
+                  "title": "Day 2 - Coorg (3 nights)",
+                  "description": "Check out from Hotel Chithara Comforts after breakfast - Travel to Coorg - Check in at Capitol Village followed by lunch - After a short rest head towards Abbey falls - Shop at the Coorg market for coffee, spices, clothing and more - Back to the hotel - Dinner - Rest up"
+              },
+              {
+                  "title": "Day 3 - Coorg",
+                  "description": "Breakfast - Leave for Mandalpatti peak to witness a breathtaking view - Head back to the hotel for lunch - After a few moments of rest travel to Omkareshwar temple - End the day at Raja's Seat enjoying the sunset amidst a garden - Back to the hotel - Dinner - Rest up"
+              },
+              {
+                  "title": "Day 4 - Coorg",
+                  "description": "Breakfast - Head towards Talakaveri temple to witness the origin of the sacred river Cauvery - Move towards Bhagamandala temple - Head back to the hotel for lunch - After a short rest travel to the Dubare Elephant Camp to experience a memorable time with the elephants - Back to the hotel - Gather around a campfire for some relaxation pre or post dinner - Rest up"
+              },
+              {
+                  "title": "Day 5 - Chikmagalur (2 nights)",
+                  "description": "Check out of Capitol Village after breakfast - Travel to Chikmagalur - Check in at Hotel Blue Pearl followed by lunch - After a short rest head towards Jhari falls via Jeep - Back to the hotel - Dinner - Rest up"
+              },
+              {
+                  "title": "Day 6 - Chikmagalur",
+                  "description": "Breakfast - Leave for Devaramane Betta to enjoy a panoramic view - Head back to the hotel for lunch - After few moments of rest visit Baba Budangiri, another scenic and historic place - Back to hotel - Dinner - Rest up"
+              },
+              {
+                  "title": "Day 7 - Mangalore",
+                  "description": "Check out post breakfast - Head towards Mangalore airport or Mangalore railway / bus station for dropping"
+              }
+          ],
+          "includesDetails": [
+              "Pickup from Udupi railway/bus station station & drop off at Mangalore airport or railway/bus station",
+              "Accommodation",
+              "All Meals",
+              "Sightseeing & Entry tickets as per itinerary"
+          ],
+          "excludesDetails": [
+              "Rail / bus / air fare",
+              "Personal market shopping",
+              "Anything not mentioned in the include section"
+          ]
       }
-    ]
-  }
+  ]
+}
