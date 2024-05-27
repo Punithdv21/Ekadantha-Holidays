@@ -12,78 +12,80 @@
 body {
     font-family: 'Poppins', sans-serif;
     line-height: 1.6;
-    
 }
 
 /* Header Styles */
 header {
-    background-color: rgba(51, 51, 51, 0.5);
-    padding: 5px;
+    background-color: transparent;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 1000;
-    text-align: center;
-    transition: background-color 0.3s ease;
     display: flex;
-    justify-content: space-between; /* Align items evenly */
-    align-items: center; /* Align items vertically */
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 9%;
+    height: 90px;
 }
 
+/* Navigation Bar */
 nav {
-    display:contents;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+/* Logo Styles */
+nav .logo-image {
+    display: flex;
     align-items: center;
 }
 
-.logo-image {
-    margin-left: 90px; /* Push logo to the right */
-    align-items: center;
-    margin-top: 10px;
+nav .logo-image img {
+    height: 15rem; /* Adjusted height */
+    width: auto; 
+    object-fit: contain; /* Ensures the image retains its aspect ratio */
+    margin-top: 2.3rem;
+    transform: rotate(0deg); /* Initial rotation */
+    transition: transform 0.5s ease; /* Smooth rotation transition */
+    margin-left: 1%;
 }
 
-nav ul {
+/* Navbar Styles */
+nav ul.navbar {
     list-style: none;
+    display: flex;
+    align-items: center;
     margin: 0;
     padding: 0;
-    display:flex;
 }
 
-nav ul li {
-    margin-right: 30px;
+nav ul.navbar li {
+    margin: 0 20px;
 }
 
-nav ul li:last-child {
-    margin-right: 90px; /* Remove margin from the last item */
-}
-
-nav ul li a {
+nav ul.navbar li a {
     text-decoration: none;
-    color: #fff;
-    position: relative;
-    font-size: 20px;
+    color: #333; /* Adjusted font color */
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
 }
 
-nav ul li a::after {
-    content: '';
-    position: absolute;
-    bottom: -3px;
-    left: 0;
-    width: 100%;
-    height: 3px;
-    background-color: transparent;
-    transition: background-color 0.3s ease;
+nav ul.navbar li a:hover {
+    color: #ff8c00;
 }
 
-nav ul li a:hover::after {
-    background-color: #ff8c00;
-}
-
-.logo-image img {
-    width: 50px;
-    height: 70px;
-    display:ruby;
-
+/* Menu Bar */
+#menu-bar{
+    color:#0062ff;
+    border:.1rem solid #fff;
+    border-radius: .5rem;
+    font-size: 2.5rem;
+    padding:.5rem 1.2rem;
+    cursor: pointer;
+    display: none;
 }
 
 /* Hero Section */
@@ -91,7 +93,6 @@ nav ul li a:hover::after {
     position: relative;
     height: 600px;
     overflow: hidden;
-    
 }
 
 .hero img {
@@ -261,7 +262,7 @@ nav ul li a:hover::after {
 
 .footer .box-container .box h3 {
     font-size: 1.5rem; /* Increase font size */
-    margin-bottom: 1rem;
+    margin-bottom : 1rem;
     color: #ff8c00;
 }
 
@@ -284,15 +285,15 @@ nav ul li a:hover::after {
     color: #ff8c00;
 }
 
-.footer .credit{
+.footer .credit {
     text-align: center;
-    padding:1.5rem 1rem;
+    padding: 1.5rem 1rem;
     margin-top: 1rem; /* Add some top margin */
     font-size: 1rem; /* Increase font size */
-    color:#fff;
-    border-top: .2rem solid rgba(255,255,255,.2);
-  }
-  
+    color: #fff;
+    border-top: 0.2rem solid rgba(255, 255, 255, 0.2);
+}
+
 .footer .credit span {
     color: #ff8c00;
 }
@@ -308,78 +309,159 @@ nav ul li a:hover::after {
     header {
         padding: 2rem;
     }
-  
+
     section {
         padding: 2rem;
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 768px) 
+{
+    /* Keep the existing styles for the menu bar */
     #menu-bar {
-        display: initial;
-    }
-  
-    header .navbar {
-        position: absolute;
-        top: 100%;
-        right: 0;
-        left: 0;
-        background: #333;
-        border-top: 0.1rem solid rgba(255, 255, 255, 0.2);
-        padding: 1rem 2rem;
-        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-    }
-  
-    header .navbar.active {
-        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-    }
-  
-    header .navbar a {
         display: block;
-        border-radius: 0.5rem;
-        padding: 1.5rem;
-        margin: 1.5rem 0;    
-        background: #222;
     }
-  
-    .tab {
-        flex-direction: column;
-        align-items: stretch;
+
+    /* Hide the default navigation links */
+    nav ul.navbar {
+        display: none; /* Hide the navigation menu by default */
+        position: absolute; /* Position the navigation menu */
+        top: 65px; /* Adjust as needed based on your header height */
+        right: 75%;
+        left: 0;
+        background: #fff; /* Dark background color */
+        padding: 1rem 0; /* Add padding */
+        text-align: left; /* Align the links to the left */
+        font-size: 1.2rem; /* Adjust the font size */
+    }    
+
+    nav ul.navbar.active {
+        display: block; /* Display the navigation menu when active */
+    }
+
+    /* Adjust the styles for the mobile navigation links */
+    header .navbar ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    header .navbar ul li {
+        margin-bottom: 1rem; /* Add space between menu items */
+    }
+
+    header .navbar ul li a {
+        display: block;
+        padding: 1rem; /* Add padding to each link */
+        color: #fff; /* Text color */
+        text-decoration: none;
+        transition: background-color 0.3s ease; /* Smooth transition */
+    }
+
+    header .navbar ul li a:hover {
+        background-color: #ff8c00; /* Hover background color */
+    }
+   
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 1.4rem;
     }
 
     .tab button {
-        width: 100%;
-        text-align: left;
-        padding: 14px 10px;
-    }
-
-    .tabcontent {
-        padding: 15px;
-    }
-}
-
-@media (max-width: 450px) {
-    html {
-        font-size: 50%;
-    }
-  
-    .heading span {
-        font-size: 2.5rem;
-    }
-  
-    .contact .row form .inputBox input {
-        width: 100%;
-    }
-
-    .tabcontent {
-        padding: 10px;
+        font-size: 1rem;
+        padding: 10px 14px;
     }
 
     .tabcontent h2 {
         font-size: 1.5rem;
     }
 
-    .tabcontent p, .tabcontent ul, .tabcontent table th, .tabcontent table td {
+    .tabcontent p {
         font-size: 0.9rem;
+    }
+
+    .tabcontent ul {
+        padding-left: 15px;
+    }
+
+    .footer .box-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px; /* Add gap between boxes */
+    }
+
+    .footer .box-container .box {
+        width: 100%; /* Take full width on smaller screens */
+        max-width: none;
+        text-align: center; /* Center align content */
+    }
+
+    .footer .text-container {
+        text-align: left; /* Align footer text to the left */
+        margin-top: 20px; /* Add margin to separate from boxes */
+    }
+}
+
+@media (max-width: 600px) {
+    html {
+        font-size: 60%; /* Increased font size */
+    }
+
+    .footer .box-container {
+        flex-direction: row; /* Change to row layout for two-column display */
+        justify-content: space-between; /* Add space between columns */
+    }
+
+    .footer .box-container .box {
+        width: 45%; /* Adjust box width for two-column layout */
+    }
+
+    /* Adjustments for smaller screens */
+    header {
+        padding: 1.5rem;
+    }
+
+    nav ul.navbar li {
+        margin: 0 10px;
+    }
+
+    nav ul.navbar li a {
+        font-size: 1.2rem; /* Increased font size */
+    }
+
+    .hero-content h1 {
+        font-size: 3rem; /* Increased font size */
+    }
+
+    .hero-content p {
+        font-size: 1.8rem; /* Increased font size */
+    }
+
+    .tab button {
+        font-size: 1.2rem; /* Increased font size */
+        padding: 12px 16px; /* Increased padding */
+    }
+
+    .tabcontent h2 {
+        font-size: 1.8rem; /* Increased font size */
+    }
+
+    .tabcontent p {
+        font-size: 1rem; /* Increased font size */
+    }
+
+    .tabcontent ul {
+        padding-left: 20px; /* Adjusted padding */
+    }
+
+    .tabcontent table {
+        font-size: 1rem; /* Increased table font size */
+    }
+
+    .footer .credit {
+        font-size: 1rem; /* Increased credit font size */
     }
 }
