@@ -1,4 +1,13 @@
 document.addEventListener('DOMContentLoaded', function() {
+    const menuBar = document.getElementById('menu-bar');
+    const nav = document.querySelector('nav ul.navbar');
+
+    // Add event listener to toggle navigation menu
+    menuBar.addEventListener('click', function() {
+        nav.classList.toggle('active');
+    });
+
+    // Fetch destination data from JSON and populate the page
     fetch('./destination.json')
         .then(response => response.json())
         .then(data => {
