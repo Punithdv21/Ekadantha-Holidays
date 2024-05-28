@@ -54,7 +54,18 @@
               "Rail / bus / air fare",
               "Personal market shopping",
               "Anything not mentioned in the include section"
+          ],
+          "gallery": [
+            "./images/locations/IMG_20240329_120046.jpg",
+            "./images/locations/IMG_20240329_120117.jpg",
+            "./images/locations/IMG_20240329_120157.jpg",
+            "./images/locations/IMG_20240329_120211.jpg",
+            "./images/locations/IMG_20240402_010443.jpg",
+            "./images/locations/IMG20240426120434.jpg",
+            "./images/locations/IMG20240426120912.jpg",
+            "./images/locations/IMG_20240402_010459.jpg"
           ]
+
       }
   ]
 }
