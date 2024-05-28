@@ -37,6 +37,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
             document.getElementById('includes').innerHTML = `<h3>Includes</h3><ul>${destination.includesDetails.map(item => `<li>${item}</li>`).join('')}</ul>`;
             document.getElementById('excludes').innerHTML = `<h3>Excludes</h3><ul>${destination.excludesDetails.map(item => `<li>${item}</li>`).join('')}</ul>`;
+
+            // Populate gallery section
+            const galleryContainer = document.getElementById('gallery');
+            const galleryImages = destination.gallery;
+
+            galleryImages.forEach(imageUrl => {
+                const img = document.createElement('img');
+                img.src = imageUrl;
+                galleryContainer.appendChild(img);
+            });
         });
 });
 
