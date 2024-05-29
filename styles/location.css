@@ -360,8 +360,8 @@ nav ul.navbar li a:hover {
     }
 
     nav .logo-image img {
-        height: 23rem; /* Adjusted height for larger screens */
-        margin-top: 2.3rem; /* Adjusted margin-top for larger screens */
+        height: 22rem; /* Adjusted height for larger screens */
+        margin-top: 3.0rem; /* Adjusted margin-top for larger screens */
         margin-right: auto;
     }
 
@@ -391,7 +391,7 @@ nav ul.navbar li a:hover {
     }
 
     nav .logo-image img {
-        height: 40px;
+        height: 35vw; /* Adjusted height for mobile devices */
     }
 }
 
@@ -410,6 +410,3 @@ nav ul.navbar li a:hover {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
     transition: transform 0.5s ease;
 }
-
-
-
